@@ -1,19 +1,11 @@
 // 1. Hlavný objekt s indíciami
 // Kľúče píš vždy MALÝMI PÍSMENAMI (bez ohľadu na to, ako ich človek napíše, kód si ich prevedie)
 const indicie = {
-    "vianoce": `
-        <p>✨ <strong>Skvelé!</strong> Prvá indícia znie:</p>
-        <p>Hľadaj tam, kde je vždy zima, aj keď vonku svieti slnko.</p>
+    "kalendára": `
+        <h3>Indícia pre 2.12.</h3>
+        <p>ALASKA</p>
     `,
     
-    "1234": `
-        <p>🎁 Našiel si tajný kód! Tu je tvoja mapa:</p>
-        <img src="https://images.unsplash.com/photo-1543589077-47d81606c1bf?w=500&q=80" alt="Vianočná indícia">
-    `,
-
-    "snehuliak": `
-        <p>⛄ Ďalší krok: Pozri sa pod vankúš na gauči v obývačke.</p>
-    `
 };
 
 // 2. Objekt so synonymami
