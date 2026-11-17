@@ -3,104 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adventný kalendár - Indície</title>
+    <title>Adventný kalendár</title>
     <style>
         :root {
-            --bg-color: #0f2027;
-            --card-bg: rgba(255, 255, 255, 0.08);
-            --accent: #d4af37; /* Zlatá */
-            --text-color: #f4f4f4;
+            --bg-color: #f7f6f2;       /* Teplá krémová / papierová */
+            --card-bg: #ffffff;        /* Čistá biela karta */
+            --text-main: #1c1c1c;      /* Tmavosivá takmer čierna */
+            --text-muted: #6e6d68;     /* Tlmená sivá */
+            --accent: #2d4739;         /* Tlmená jedľová zelená */
+            --border-color: #e4e2dc;   /* Jemná linka */
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            color: var(--text-color);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            padding: 24px;
+            line-height: 1.6;
         }
 
         .container {
             background: var(--card-bg);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: 16px;
-            padding: 40px 30px;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 48px 36px;
             width: 100%;
-            max-width: 500px;
+            max-width: 480px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+        }
+
+        header {
             text-align: center;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            margin-bottom: 32px;
         }
 
         h1 {
-            color: var(--accent);
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-            letter-spacing: 1px;
+            font-family: Georgia, "Times New Roman", serif;
+            font-weight: normal;
+            font-size: 1.75rem;
+            color: var(--text-main);
+            margin-bottom: 8px;
+            letter-spacing: -0.01em;
         }
 
         p.subtitle {
-            font-size: 0.95rem;
-            color: #ccc;
-            margin-bottom: 25px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
         }
 
         input[type="text"] {
             width: 100%;
-            padding: 15px 20px;
-            font-size: 1.1rem;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
-            background: rgba(0, 0, 0, 0.25);
-            color: #fff;
+            padding: 14px 16px;
+            font-size: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--bg-color);
+            color: var(--text-main);
             text-align: center;
             outline: none;
-            transition: all 0.3s ease;
+            transition: border-color 0.2s ease, background-color 0.2s ease;
         }
 
         input[type="text"]:focus {
+            background: #ffffff;
             border-color: var(--accent);
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
         }
 
         input[type="text"]::placeholder {
-            color: rgba(255, 255, 255, 0.4);
+            color: #a3a19b;
         }
 
         #result {
-            margin-top: 25px;
-            min-height: 20px;
-            transition: all 0.3s ease;
+            margin-top: 28px;
         }
 
         /* Štýl pre zobrazenú indíciu */
         .clue-box {
-            background: rgba(0, 0, 0, 0.3);
-            border-left: 4px solid var(--accent);
-            padding: 20px;
-            border-radius: 8px;
-            animation: fadeIn 0.4s ease-out;
-            line-height: 1.6;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-color);
+            animation: fadeIn 0.3s ease-out;
+            text-align: left;
+        }
+
+        .clue-box h3 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-weight: normal;
+            font-size: 1.25rem;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        .clue-box p {
+            font-size: 0.95rem;
+            color: var(--text-main);
+            margin-bottom: 12px;
+        }
+
+        .clue-box p:last-child {
+            margin-bottom: 0;
         }
 
         .clue-box img {
-            max-width: 100%;
+            display: block;
+            width: 100%;
+            height: auto;
             border-radius: 8px;
-            margin-top: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            margin-top: 16px;
+            border: 1px solid var(--border-color);
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
+            from { opacity: 0; transform: translateY(-6px); }
             to { opacity: 1; transform: translateY(0); }
         }
     </style>
@@ -108,12 +131,13 @@
 <body>
 
     <div class="container">
-        <h1>🎄 Adventný kalendár</h1>
-        <p class="subtitle">Zadaj tajné heslo alebo kód pre odhalenie indície na ďalší deň</p>
+        <header>
+            <h1>Adventný kalendár</h1>
+            <p class="subtitle">Zadaj heslo pre zobrazenie dnešnej indície</p>
+        </header>
         
-        <input type="text" id="codeInput" placeholder="Sem napíš heslo..." autocomplete="off">
+        <input type="text" id="codeInput" placeholder="Napíš heslo..." autocomplete="off">
         
-        <!-- Sem sa vloží HTML z JS súboru -->
         <div id="result"></div>
     </div>
 
