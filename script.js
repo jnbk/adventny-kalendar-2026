@@ -5,14 +5,17 @@ const indicie = {
         <h3>Indícia pre 2.12.</h3>
         <p>ALASKA</p>
     `,
+    "Vajkovce": `
+        <h3>Indícia pre 3.12.</h3>
+        <p>na kávu do kaviarne v Martine</p>
+    `,
     
 };
 
 // 2. Objekt so synonymami
 // Kľúč musí sedieť s kľúčom v objekte 'indicie'. Do hranatých zátvoriek píš alternatívy (v úvodzovkách).
 const synonyma = {
-    "snehuliak": ["snowman", "snehový muž", "snehovy muz", "olaf"],
-    "vianoce": ["christmas", "xmas", "štedrý deň", "stedry den"]
+    "Vajkovce": ["Vajkovciach", "vo Vajkovciach"],
 };
 
 // --- LOGIKA PREVODNÍKA A VYHĽADÁVANIA ---
