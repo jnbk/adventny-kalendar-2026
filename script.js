@@ -15,7 +15,7 @@ const indicie = {
 // 2. Objekt so synonymami
 // Kľúč musí sedieť s kľúčom v objekte 'indicie'. Do hranatých zátvoriek píš alternatívy (v úvodzovkách).
 const synonyma = {
-    "Vajkovce": ["Vajkovciach", "vo Vajkovciach"],
+    "Vajkovce": ["Vajkovce","Vajkovciach", "vo Vajkovciach"],
 };
 
 // --- LOGIKA PREVODNÍKA A VYHĽADÁVANIA ---
